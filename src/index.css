@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 25 80% 15%; /* Dark Gold/Brown for text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 80% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 80% 15%;
+
+    --primary: 45 100% 51%; /* Gold (e.g., gold-500) */
+    --primary-foreground: 25 80% 10%; /* Darker text for on-gold elements */
+
+    --secondary: 45 50% 95%; /* Light Gold/Cream (e.g., gold-100) */
+    --secondary-foreground: 25 80% 15%;
+
+    --muted: 0 0% 96.1%; /* Light Gray */
+    --muted-foreground: 0 0% 40%; /* Mid Gray for muted text */
+
+    --accent: 40 90% 60%; /* Brighter Gold for accents (e.g., gold-400) */
+    --accent-foreground: 25 80% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 45 30% 85%; /* Light gold/beige border */
+    --input: 45 30% 88%; /* Light gold/beige input background */
+    --ring: 45 100% 51%; /* Gold for focus rings */
+
+    --radius: 0.5rem;
+
+    /* Sidebar specific vars - can be adjusted if sidebar needs distinct styling from main theme */
+    --sidebar-background: 0 0% 98%; /* Very Light Gray / Off-white */
+    --sidebar-foreground: 25 80% 20%; /* Dark Gold/Brown for sidebar text */
+    --sidebar-primary: 45 100% 51%; /* Gold for active sidebar items */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text on gold */
+    --sidebar-accent: 45 50% 90%; /* Lighter gold for hover/accent in sidebar */
+    --sidebar-accent-foreground: 25 80% 15%;
+    --sidebar-border: 45 30% 85%;
+    --sidebar-ring: 45 100% 51%;
+  }
+
+  .dark {
+    --background: 25 80% 10%; /* Dark Brown/Almost Black */
+    --foreground: 45 80% 90%; /* Light Gold/Cream text */
+
+    --card: 25 80% 12%;
+    --card-foreground: 45 80% 90%;
+
+    --popover: 25 80% 10%;
+    --popover-foreground: 45 80% 90%;
+
+    --primary: 45 100% 60%; /* Brighter Gold for dark mode */
+    --primary-foreground: 25 80% 5%; 
+
+    --secondary: 25 50% 20%; /* Darker Gold/Brown */
+    --secondary-foreground: 45 80% 90%;
+
+    --muted: 25 50% 15%; /* Very Dark Gold/Brown */
+    --muted-foreground: 45 50% 70%; 
+
+    --accent: 40 90% 65%; /* Brighter Gold accent for dark */
+    --accent-foreground: 25 80% 5%;
+
+    --border: 45 30% 30%; 
+    --input: 45 30% 25%;
+    --ring: 45 100% 60%;
+
+    /* Dark Sidebar */
+    --sidebar-background: 25 80% 8%;
+    --sidebar-foreground: 45 80% 85%;
+    --sidebar-primary: 45 100% 60%;
+    --sidebar-primary-foreground: 25 80% 5%;
+    --sidebar-accent: 25 50% 18%;
+    --sidebar-accent-foreground: 45 80% 85%;
+    --sidebar-border: 45 30% 25%;
+    --sidebar-ring: 45 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif; /* Example: Using a modern sans-serif font */
+  }
+
+  /* Adding a general transition for color properties for smoother theme changes */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+}
+
+/* Add Inter font (example) */
