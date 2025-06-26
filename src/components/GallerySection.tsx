@@ -8,30 +8,14 @@ const GallerySection = () => {
 
   // Sample images with proper aspect ratios
   const galleryImages = [
-    {
-      id: 1,
-      src: "d2060104-5a19-4545-87aa-6d2792618154.jpg",
-      alt: "",
-      title: ""
-    },
+
     {
       id: 2,
       src: "469313626_1142532597273545_97929.jpg",
       alt: "",
       title: ""
     },
-    {
-      id: 3,
-      src: "3f97bc9b-911a-4398-8ed4-061bc2cd60da.jpg",
-      alt: "",
-      title: ""
-    },
-    {
-      id: 4,
-      src: "128115692_253325912860889_646165.jpg",
-      alt: "",
-      title: ""
-    },
+    
     {
       id: 5,
       src: "491972626_1197667665697874_11325.jpg",
