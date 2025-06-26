@@ -70,7 +70,7 @@ const ContactPage: React.FC = () => {
                   <Mail size={28} className="text-primary mr-4 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-1">Email</h3>
-                    <a href="mailto:support@addamaneascenseurs.ma" className="text-foreground/80 hover:text-primary transition-colors text-lg break-all">support@addamaneascenseurs.ma</a>
+                    <a href="mailto:support@franceascenseurs.ma" className="text-foreground/80 hover:text-primary transition-colors text-lg break-all">support@franceascenseurs.ma</a>
                     <p className="text-sm text-muted-foreground">Réponse rapide garantie</p>
                   </div>
                 </div>
