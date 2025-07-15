@@ -5,7 +5,7 @@ import PageHeroInternal from '../components/PageHeroInternal';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-const WHATSAPP_PHONE_NUMBER = '2126660331191';
+const WHATSAPP_PHONE_NUMBER = '212666033119';
 
 const ContactPage: React.FC = () => {
   const { ref: contactDetailsRef, isVisible: contactDetailsVisible } = useScrollAnimation(0.2, 0);
