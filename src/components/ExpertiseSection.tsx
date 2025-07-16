@@ -134,9 +134,9 @@ const ExpertiseSection = () => {
   <p className="font-semibold text-black dark:text-white">
     Une question ? Un projet ? Contactez-nous :
   </p>
-  <a href="tel:+212 626-597561">
+  <a href="tel:06 66 03 31 19">
     <p className="text-2xl font-extrabold text-black dark:text-[#FFD700] transition-colors duration-300 hover:text-[#FFD700]">
-    06 26 59 75 61
+    06 66 03 31 19
     </p>
   </a>
 </div>

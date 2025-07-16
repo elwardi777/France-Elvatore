@@ -13,7 +13,7 @@ const PiecesPage = () => {
     {
       icon: <PackageSearch size={32} className="text-primary" />,
       title: "Tous types de pièces",
-      description: "Moteurs, Câbles,Contrôle d’accès, Tags, vérins hydrauliques, et plus encore.",
+      description: "Des cartes électroniques, Des variateurs, Des galet , Des coulisseau cabine et contre poids, Des bouton , Des afficheurs, et plus encore.",
     },
     {
       icon: <Tag size={32} className="text-primary" />,
@@ -43,14 +43,31 @@ const PiecesPage = () => {
             {/* ===== Main Content ===== */}
             <div className="flex-1 space-y-10">
               <section ref={introRef} className={`transition-all duration-700 ease-out ${introVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                
+                {/* ✅ Intro Paragraph Added */}
+
+
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
                   France Ascenseurs – Toutes vos pièces au meilleur prix
                 </h2>
+                <p className="text-lg text-foreground/80 leading-relaxed mb-10 text-center">
+  Chez <span className="text-primary font-bold">France Ascenseurs</span>, nous proposons <span className="text-primary font-bold">toutes les pièces de rechange pour ascenseurs</span> à des <span className="text-primary font-bold">prix plus abordables</span> que ceux des autres entreprises. Pourquoi ? Parce que nous <span className="text-primary font-bold">importons directement</span> les pièces sans intermédiaires. Cela nous permet d'assurer la qualité tout en réduisant les coûts pour nos clients. <br /><br />
+  Que vous ayez besoin  de <span className="text-primary font-bold">câbles</span>, de <span className="text-primary font-bold">cartes électroniques</span>, de <span className="text-primary font-bold">variateurs</span>, de <span className="text-primary font-bold">galets</span>, de <span className="text-primary font-bold">coulisseaux cabine et contrepoids</span>, de <span className="text-primary font-bold">boutons</span>, ou d'<span className="text-primary font-bold">afficheurs</span>, ou de tout autre composant, vous trouverez chez nous des <span className="text-primary font-bold">produits fiables, certifiés</span> et <span className="text-primary font-bold">disponibles immédiatement</span>. Faites confiance à notre expertise pour équiper ou rénover vos ascenseurs avec des pièces performantes et durables.
+</p>
+<br />
+
                 <div className="grid md:grid-cols-3 gap-8">
                   {products.map((item, index) => (
                     <div key={index} className="p-6 bg-card rounded-xl shadow-lg transform hover:scale-[1.03] transition-transform duration-300 ease-in-out">
-                      <div className="mb-4">{item.icon}</div>
-                      <h3 className="text-xl font-semibold text-primary mb-2">{item.title}</h3>
+<div className="mb-4 flex justify-center items-center">
+  {item.icon}
+</div>
+<div className="mb-2 flex justify-center">
+  <h3 className="text-xl font-semibold text-primary text-center whitespace-nowrap">
+    {item.title}
+  </h3>
+</div>
+
                       <p className="text-foreground/80 leading-relaxed">{item.description}</p>
                     </div>
                   ))}
