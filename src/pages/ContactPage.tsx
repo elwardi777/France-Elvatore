@@ -40,7 +40,7 @@ const ContactPage: React.FC = () => {
   
 
     const encodedMessage = encodeURIComponent(waMessage);
-    const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`;
+    const waLink = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`;
   
     window.open(waLink, '_blank');
 
