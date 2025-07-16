@@ -40,28 +40,9 @@ const ContactPage: React.FC = () => {
   
 
     const encodedMessage = encodeURIComponent(waMessage);
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    
-    // On essaye d’ouvrir le lien `whatsapp://send` d'abord
-    const whatsappURL = `whatsapp://send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`;
-    
-    // Si l'utilisateur est sur téléphone, استخدم whatsapp:// أو api.whatsapp.com
-    if (isMobile) {
-      window.location.href = whatsappURL;
-    } else {
-      // في الحاسوب، نجرّب whatsapp:// وندير fallback إلى WhatsApp Web
-      const timeout = setTimeout(() => {
-        const webURL = `https://web.whatsapp.com/send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`;
-        window.open(webURL, '_blank');
-      }, 1000);
-    
-      // نحاول فتح التطبيق مباشرة
-      window.location.href = whatsappURL;
-    
-      // نلغيه إذا خدم التطبيق
-      window.addEventListener('blur', () => clearTimeout(timeout));
-    }
-    
+    const waLink = `https://api.whatsapp.com/send?phone=${WHATSAPP_PHONE_NUMBER}&text=${encodedMessage}`;
+  
+    window.open(waLink, '_blank');
 
   };
 
