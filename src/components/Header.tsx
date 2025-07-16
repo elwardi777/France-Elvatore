@@ -35,7 +35,7 @@ const Header = () => {
     <div className="flex items-center space-x-4">
       
       {/* Numéro de téléphone cliquable sans soulignement */}
-      <a href="tel:      +212 666-033119" className="flex items-center space-x-2 no-underline hover:text-yellow-100 transition-colors">
+      <a href="tel:06 66 03 31 19" className="flex items-center space-x-2 no-underline hover:text-yellow-100 transition-colors">
         <Phone size={14} />
         <span>      +212 666-033119</span>
       </a>

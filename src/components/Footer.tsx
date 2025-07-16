@@ -122,7 +122,7 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 group">
                   <Phone className="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" />
-                  <a href="tel:+212 666-033119" className="hover:text-gold-300 transition-colors">
+                  <a href="tel:06 66 03 31 19" className="hover:text-gold-300 transition-colors">
                   +212 666-033119
                   </a>
                 </div>
@@ -217,7 +217,7 @@ Franceascenseurs.maroc@gmail.com                  </a>
                 <p className="text-gray-300 mb-4">
                   Un projet ? Contactez-nous :
                 </p>
-                <a href="tel:+212 666-033119" className="block w-full bg-[#D4AF37] hover:bg-[#FFD700] text-white text-center py-3 rounded-lg font-semibold transition-colors">
+                <a href="tel:06 66 03 31 19" className="block w-full bg-[#D4AF37] hover:bg-[#FFD700] text-white text-center py-3 rounded-lg font-semibold transition-colors">
                 06 66 03 31 19
                 </a>
               </div>
