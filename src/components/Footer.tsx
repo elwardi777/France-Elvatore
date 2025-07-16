@@ -132,15 +132,20 @@ const Footer = () => {
                     href="mailto:support@franceascenseurs.ma"
                     className="hover:text-gold-300 transition-colors"
                   >
-                    support@franceascenseurs.ma
-                  </a>
+Franceascenseurs.maroc@gmail.com                  </a>
                 </div>
                 <div className="flex items-start space-x-3 group">
-                  <MapPin className="w-5 h-5 text-gold-400 mt-1 group-hover:scale-110 transition-transform" />
-                  <span className="hover:text-gold-300 transition-colors">
-                  NR 80, azhari, 01 Rue 36, Casablanca 20220
-                  </span>
-                </div>
+  <MapPin className="w-5 h-5 text-gold-400 mt-1 group-hover:scale-110 transition-transform" />
+  <a 
+    href="https://www.google.com/maps/search/?api=1&query=NR+80,+azhari,+01+Rue+36,+Casablanca+20220"
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="hover:text-gold-300 transition-colors"
+  >
+    NR 80, azhari, 01 Rue 36, Casablanca 20220
+  </a>
+</div>
+
               </div>
             </div>
 

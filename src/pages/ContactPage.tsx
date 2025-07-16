@@ -31,7 +31,7 @@ const ContactPage: React.FC = () => {
     const subject = form.subject.value.trim();
     const message = form.message.value.trim();
     const waMessage =
-    ` *Nouveau message reçu* \n\n` +
+    ` *----- Nouveau message reçu -----* \n\n` +
     ` *Nom:* ${name}\n` +
     ` *Email:* ${email}\n` +
     (phone ? ` *Téléphone:* ${phone}\n` : '') +
