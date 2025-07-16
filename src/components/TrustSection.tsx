@@ -57,7 +57,7 @@ const TrustSection = () => {
               <span className="text-[#D4AF37]">services ?</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
-              En tant que spécialiste de l'installation, la réparation et la maintenance d'ascenseurs au Maroc, nous mettons à votre disposition plus de 15 ans d'expérience pour garantir des solutions sûres, performantes et conformes aux normes.
+            En tant que spécialiste de l'installation, la réparation, la maintenance et la vente de pièces détachées d'ascenseurs au Maroc, nous mettons à votre disposition plus de 15 ans d'expérience pour garantir des solutions sûres, performantes et conformes aux normes.
             </p>
           </div>
           

@@ -30,13 +30,14 @@ const ContactPage: React.FC = () => {
     const phone = form.phone.value.trim();
     const subject = form.subject.value.trim();
     const message = form.message.value.trim();
-
     const waMessage =
-      `Nom: ${name}\n` +
-      `Email: ${email}\n` +
-      (phone ? `Téléphone: ${phone}\n` : '') +
-      `Sujet: ${subject}\n` +
-      `Message: ${message}`;
+    ` *Nouveau message reçu* \n\n` +
+    ` *Nom:* ${name}\n` +
+    ` *Email:* ${email}\n` +
+    (phone ? ` *Téléphone:* ${phone}\n` : '') +
+    ` *Sujet:* ${subject}\n\n` +
+    ` *Message:*\n${message}`;
+  
 
     const encodedMessage = encodeURIComponent(waMessage);
     const waLink = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodedMessage}`;

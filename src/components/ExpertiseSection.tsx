@@ -102,7 +102,7 @@ const ExpertiseSection = () => {
                 transition={{ duration: 0.9, delay: 0.2, type: "spring" }}
               >
                 <p className="text-lg text-gray-700 dark:text-gray-200 mb-8 leading-relaxed">
-                  Nous sommes votre partenaire de confiance pour tous vos besoins en ascenseurs, de l'installation à la maintenance. Forts de notre expertise et de notre engagement envers la qualité, nous offrons des solutions adaptées à chaque projet.
+                Nous sommes votre partenaire de confiance pour tous vos besoins en ascenseurs, de l'installation à la maintenance, ainsi que pour la vente de pièces détachées. Forts de notre expertise et de notre engagement envers la qualité, nous offrons des solutions adaptées à chaque projet.
                 </p>
               </motion.div>
               {/* Expertise List + Contact */}

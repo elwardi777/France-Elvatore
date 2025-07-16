@@ -45,7 +45,7 @@ const HeroSection = () => {
             }`}
           >
             <p className="text-lg md:text-xl mb-8 text-gray-300">
-              Installation, réparation et maintenance d'ascenseurs au Maroc avec une expertise de plus de <br />   15 ans
+            Installation, réparation, maintenance et vente de pièces détachées d'ascenseurs au Maroc avec une expertise de plus de <br /> 15 ans.
             </p>
           </div>
           
