@@ -11,6 +11,8 @@ import MaintenancePage from "./pages/MaintenancePage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./utils/ScrollToTop"; // Import the new component
+import PiecesPage from './pages/PiecesPage';
+
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,8 @@ const App = () => (
         <ScrollToTop /> {/* Add ScrollToTop here */}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/pieces" element={<PiecesPage />} />
+
           <Route path="/installation" element={<InstallationPage />} />
           <Route path="/reparation" element={<ReparationPage />} />
           <Route path="/maintenance" element={<MaintenancePage />} />

@@ -70,11 +70,15 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-primary mb-1">Téléphone</h3>
                     <a href="tel:0666033119" className="hover:text-primary transition-colors block">
-                      06 66 03 31 19
-                    </a>
-                    <a href="tel:0661560380" className="hover:text-primary transition-colors block">
-                      06 61 56 03 80
-                    </a>
+  06 66 03 31 19
+</a>
+<a href="tel:0661560380" className="hover:text-primary transition-colors block">
+  06 61 56 03 80
+</a>
+<a href="tel:0677820536" className="hover:text-primary transition-colors block">
+  06 77 82 05 36
+</a>
+
                     <p className="text-sm text-muted-foreground">Disponible pour urgences 7j/7</p>
                   </div>
                 </div>

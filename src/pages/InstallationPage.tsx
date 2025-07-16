@@ -145,7 +145,7 @@ const InstallationPage = () => {
 
               {/* ... keep existing code (whyUsRef and galleryRef sections) */}
                <section ref={whyUsRef} className={`transition-all duration-700 ease-out ${whyUsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">Pourquoi Choisir Addamane Ascenseurs ?</h2>
+  <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10">Pourquoi Choisir France Ascenseurs ?</h2>
   <ul className="space-y-5">
     {whyChooseUsItems.map((item, index) => (
       <li key={index} className="flex items-start text-foreground/80 text-lg p-4 bg-card rounded-lg shadow-sm"> {/* Hover effect removed */}

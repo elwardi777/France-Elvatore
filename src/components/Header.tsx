@@ -35,18 +35,18 @@ const Header = () => {
     <div className="flex items-center space-x-4">
       
       {/* Numéro de téléphone cliquable sans soulignement */}
-      <a href="tel:+212626597561" className="flex items-center space-x-2 no-underline hover:text-yellow-100 transition-colors">
+      <a href="tel:      +212 666-033119" className="flex items-center space-x-2 no-underline hover:text-yellow-100 transition-colors">
         <Phone size={14} />
-        <span>+212 626-597561</span>
+        <span>      +212 666-033119</span>
       </a>
       
       {/* Adresse email cliquable sans soulignement */}
       <a
-        href="mailto:support@FranceAscenseurs.ma"
+        href="mailto:Franceascenseurs.maroc@gmail.com"
         className="hidden md:flex items-center space-x-2 no-underline hover:text-yellow-100 transition-colors"
       >
         <Mail size={14} />
-        <span>support@FranceAscenseurs.ma</span>
+        <span>Franceascenseurs.maroc@gmail.com</span>
       </a>
     </div>
 
@@ -102,6 +102,8 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 space-x-10">
             <NavLink to="/" className={getLinkClass}>Accueil</NavLink>
+            <NavLink to="/pieces" className={getLinkClass}>Nos Pièces</NavLink>
+
             <NavLink to="/installation" className={getLinkClass}>Installation</NavLink>
             <NavLink to="/reparation" className={getLinkClass}>Réparation</NavLink>
             <NavLink to="/maintenance" className={getLinkClass}>Maintenance</NavLink>
@@ -115,7 +117,10 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               {[
                 { to: "/", label: "Accueil" },
+                { to: "/pieces", label: "Nos Pièces" }, // ✅ جديد
+
                 { to: "/installation", label: "Installation" },
+                
                 { to: "/reparation", label: "Réparation" },
                 { to: "/maintenance", label: "Maintenance" },
                 { to: "/contact", label: "Contact" },

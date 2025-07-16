@@ -91,10 +91,15 @@ const Footer = () => {
                 <div className="text-xl font-bold">France Ascenseurs</div>
               </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Experts en <span className="text-gold-300 font-bold"
-                >installation, réparation et maintenance</span> d'ascenseurs depuis plus de 30 ans, nous offrons des <span className="text-gold-300 font-bold">solutions sur mesure</span> adaptées à tous vos besoins.
-              </p>
-              
+  Nous assurons la <span className="text-gold-300 font-bold">
+    vente de toutes les pièces d'ascenseurs
+  </span>, ainsi que l'expertise en <span className="text-gold-300 font-bold">
+    installation, réparation et maintenance
+  </span> d'ascenseurs depuis plus de 15 ans. Nous offrons des <span className="text-gold-300 font-bold">
+    solutions sur mesure
+  </span> adaptées à tous vos besoins.
+</p>
+
               <div className="flex space-x-4 mb-6">
   <a
     href="https://www.facebook.com/France.Ascenseurss/"
@@ -117,8 +122,8 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 group">
                   <Phone className="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" />
-                  <a href="tel:+212 626-597561" className="hover:text-gold-300 transition-colors">
-                  +212 626-597561
+                  <a href="tel:+212 666-033119" className="hover:text-gold-300 transition-colors">
+                  +212 666-033119
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 group">
@@ -133,7 +138,7 @@ const Footer = () => {
                 <div className="flex items-start space-x-3 group">
                   <MapPin className="w-5 h-5 text-gold-400 mt-1 group-hover:scale-110 transition-transform" />
                   <span className="hover:text-gold-300 transition-colors">
-                    oulfa casablanca, Casablanca, Morocco
+                  NR 80, azhari, 01 Rue 36, Casablanca 20220
                   </span>
                 </div>
               </div>
@@ -149,6 +154,13 @@ const Footer = () => {
                     <span>Accueil</span>
                   </Link>
                 </li>
+                <li>
+  <Link to="/pieces" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center space-x-2 group">
+    <span className="w-2 h-2 bg-gold-400 rounded-full group-hover:scale-125 transition-transform"></span>
+    <span>Pièces d'ascenseur</span>
+  </Link>
+</li>
+
                 <li>
                   <Link to="/installation" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center space-x-2 group">
                     <span className="w-2 h-2 bg-gold-400 rounded-full group-hover:scale-125 transition-transform"></span>
@@ -200,8 +212,8 @@ const Footer = () => {
                 <p className="text-gray-300 mb-4">
                   Un projet ? Contactez-nous :
                 </p>
-                <a href="tel:+212 626-597561" className="block w-full bg-[#D4AF37] hover:bg-[#FFD700] text-white text-center py-3 rounded-lg font-semibold transition-colors">
-                06 26 59 75 61
+                <a href="tel:+212 666-033119" className="block w-full bg-[#D4AF37] hover:bg-[#FFD700] text-white text-center py-3 rounded-lg font-semibold transition-colors">
+                06 66 03 31 19
                 </a>
               </div>
             </div>
