@@ -1,42 +1,91 @@
-
+// src/App.tsx
+import React, { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import InstallationPage from "./pages/InstallationPage";
 import ReparationPage from "./pages/ReparationPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
-import ScrollToTop from "./utils/ScrollToTop"; // Import the new component
-import PiecesPage from './pages/PiecesPage';
-
+import ScrollToTop from "./utils/ScrollToTop";
+import PiecesPage from "./pages/PiecesPage";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop /> {/* Add ScrollToTop here */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/pieces" element={<PiecesPage />} />
+const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
+        backgroundColor: "#fff",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999,
+        overflow: "hidden",
+      }}
+    >
+      <video
+        src="/WhatsApp Vidéo 2025-07-17 à 19.45.15_b96923f6.mp4"
+        autoPlay
+        muted
+        playsInline
+        preload="auto"
+        controls={false}
+        disablePictureInPicture
+        controlsList="nodownload nofullscreen noremoteplayback"
+        onEnded={onFinish}
+        style={{
+          width: "100vw",
+          height: "100vh",
+          objectFit: "cover",
+          display: "block",
+        }}
+      />
+    </div>
+  );
+};
 
-          <Route path="/installation" element={<InstallationPage />} />
-          <Route path="/reparation" element={<ReparationPage />} />
-          <Route path="/maintenance" element={<MaintenancePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+const AppRoutes = () => (
+  <BrowserRouter>
+    <ScrollToTop />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/pieces" element={<PiecesPage />} />
+      <Route path="/installation" element={<InstallationPage />} />
+      <Route path="/reparation" element={<ReparationPage />} />
+      <Route path="/maintenance" element={<MaintenancePage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
 );
 
-export default App;
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        {showSplash ? (
+          <SplashScreen onFinish={() => setShowSplash(false)} />
+        ) : (
+          <AppRoutes />
+        )}
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
+
+export default App;
