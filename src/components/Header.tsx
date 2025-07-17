@@ -85,8 +85,8 @@ const Header = () => {
   <img 
     src="/lovable-uploads/019708e0-e1ba-41d2-969f-8037e332131f.png" 
     alt="France Ascenseurs Logo" 
-    className="h-20 w-auto relative transform translate-x-12" // ~3cm depending on base font size
-  />
+    className="h-20 w-auto transform translate-x-12 transition duration-700 ease-in-out group-hover:scale-105 group-hover:rotate-y-180"
+    />
 </Link>
 
           {/* Mobile Menu Button */}

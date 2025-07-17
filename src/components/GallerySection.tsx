@@ -1,80 +1,100 @@
 import React, { useState } from 'react';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const GallerySection = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [isLoading, setIsLoading] = useState({});
+// Define the shape of an image object
+interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+}
+
+const GallerySection: React.FC = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+  const [isLoading, setIsLoading] = useState<{ [key: number]: boolean }>({});
 
   // Sample images with proper aspect ratios
-  const galleryImages = [
-
+  const galleryImages: GalleryImage[] = [
     {
       id: 2,
       src: "469313626_1142532597273545_97929.jpg",
-      alt: "",
-      title: ""
+      alt: "Installation d'ascenseur par France Ascenseurs",
+      title: "Installation professionnelle d'ascenseurs "
     },
-    
     {
       id: 5,
       src: "491972626_1197667665697874_11325.jpg",
-      alt: "",
-      title: ""
+      alt: "Maintenance d'ascenseur de qualité avec France Ascenseurs",
+      title: "Maintenance fiable d'ascenseurs "
     },
     {
       id: 6,
       src: "494664453_1209716037826370_79348.jpg",
-      alt: "",
-      title: ""
+      alt: "Installation réussie d'ascenseurs par France Ascenseurs",
+      title: "Installation d'ascenseurs réussie "
     },
     {
       id: 2,
       src: "494159058_1208685447929429_27460.jpg",
-      alt: "",
-      title: ""
+      alt: "Modernisation d'ascenseur avec France Ascenseurs",
+      title: "Modernisation et mise à niveau des ascenseurs"
     },
     {
       id: 2,
       src: "491348674_1196709479127026_20576.jpg",
-      alt: "",
-      title: ""
+      alt: "Intervention rapide pour ascenseur - France Ascenseurs",
+      title: "Réparation et dépannage d'ascenseurs"
     },
     {
       id: 2,
       src: "499247558_1224437116354262_50754.jpg",
-      alt: "",
-      title: ""
+      alt: "Equipe technique certifiée France Ascenseurs",
+      title: "Equipe technique professionnelle et certifiée"
     }
   ];
-
-  const openLightbox = (image) => {
-    setSelectedImage(image);
+  
+  const openLightbox = (index: number) => {
+    setSelectedImageIndex(index);
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
     document.body.style.overflow = '';
   };
 
-  const handleImageLoad = (imageId) => {
+  const handleImageLoad = (imageId: number) => {
     setIsLoading(prev => ({
       ...prev,
       [imageId]: false
     }));
   };
 
-  const handleImageError = (imageId) => {
+  const handleImageError = (imageId: number) => {
     setIsLoading(prev => ({
       ...prev,
       [imageId]: false
     }));
   };
+
+  const goToPreviousImage = () => {
+    setSelectedImageIndex((prevIndex) => 
+      prevIndex === 0 ? galleryImages.length - 1 : prevIndex! - 1
+    );
+  };
+
+  const goToNextImage = () => {
+    setSelectedImageIndex((prevIndex) => 
+      prevIndex === galleryImages.length - 1 ? 0 : prevIndex! + 1
+    );
+  };
+
+  const selectedImage = selectedImageIndex !== null ? galleryImages[selectedImageIndex] : null;
 
   return (
-<section className="relative py-24 bg-gradient-to-br from-gray-300 via-gray-800 to-black overflow-hidden">
-<div className="container mx-auto px-4 max-w-7xl">
+    <section className="relative py-24 bg-gradient-to-br from-gray-300 via-gray-800 to-black overflow-hidden">
+      <div className="container mx-auto px-4 max-w-7xl">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -92,7 +112,7 @@ const GallerySection = () => {
             <div 
               key={image.id}
               className="group relative cursor-pointer overflow-hidden rounded-2xl shadow-2xl bg-white/10 backdrop-blur-sm border border-white/20"
-              onClick={() => openLightbox(image)}
+              onClick={() => openLightbox(index)}
               style={{ 
                 animationDelay: `${index * 150}ms`,
                 animation: 'fadeInUp 0.8s ease-out forwards'
@@ -141,13 +161,11 @@ const GallerySection = () => {
 
         {/* Call to Action */}
         <div className="flex justify-center mt-16">
-        
-        <Link to="/contact">
-              <button className="center group bg-[#D4AF37] hover:bg-[#FFD700] text-white text-lg font-semibold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold-500/25 flex items-center">
-                Je souhaite obtenir un devis
-              </button>
-            </Link>
-              
+          <Link to="/contact">
+            <button className="center group bg-[#D4AF37] hover:bg-[#FFD700] text-white text-lg font-semibold px-8 py-4 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold-500/25 flex items-center">
+              Je souhaite obtenir un devis
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -165,24 +183,43 @@ const GallerySection = () => {
             <X size={24} />
           </button>
 
+          {/* Navigation Buttons */}
+          <button 
+            className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors duration-300 z-10 bg-black/20 rounded-full p-3 hover:bg-black/40"
+            onClick={(e: React.MouseEvent) => {
+              e.stopPropagation();
+              goToPreviousImage();
+            }}
+          >
+            <ChevronLeft size={28} />
+          </button>
+          <button 
+            className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors duration-300 z-10 bg-black/20 rounded-full p-3 hover:bg-black/40"
+            onClick={(e: React.MouseEvent) => {
+              e.stopPropagation();
+              goToNextImage();
+            }}
+          >
+            <ChevronRight size={28} />
+          </button>
+
           {/* Image Navigation Info */}
           <div className="absolute top-6 left-6 text-white/80 z-10">
             <p className="text-sm font-medium">{selectedImage.title}</p>
             <p className="text-xs text-white/60 mt-1">
-              {galleryImages.findIndex(img => img.id === selectedImage.id) + 1} / {galleryImages.length}
+              {selectedImageIndex + 1} / {galleryImages.length}
             </p>
           </div>
 
           {/* Main Image */}
           <div className="relative w-full max-w-[50vw] max-h-[90vh] mx-auto flex items-center justify-center">
-  <img 
-    src={selectedImage.src}
-    alt={selectedImage.alt}
-    className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
-    onClick={(e) => e.stopPropagation()}
-  />
-</div>
-
+            <img 
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="max-h-full max-w-full object-contain rounded-lg shadow-2xl"
+              onClick={(e: React.MouseEvent) => e.stopPropagation()}
+            />
+          </div>
 
           {/* Image Info */}
           <div className="absolute bottom-6 left-6 right-6 text-center">
@@ -191,7 +228,6 @@ const GallerySection = () => {
           </div>
         </div>
       )}
-
     </section>
   );
 };
