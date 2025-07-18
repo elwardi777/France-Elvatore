@@ -35,7 +35,7 @@ const SplashScreen = ({ onFinish }: { onFinish: () => void }) => {
       }}
     >
       <video
-        src="/WhatsApp Vidéo 2025-07-17 à 19.45.15_b96923f6.mp4"
+        src="/WhatsApp Vidéo 2025-07-18 à 20.55.22_42a2ea7d.mp4"
         autoPlay
         muted
         playsInline
