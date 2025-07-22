@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, Facebook, Linkedin, Menu, X } from 'lucide-react';
+import { Phone, Mail, Facebook, Linkedin, Menu, X, ShoppingCart, Heart } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext';
+import { useFavorites } from '../contexts/FavoritesContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { getCartItemsCount } = useCart();
+  const { favorites } = useFavorites();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,12 +106,32 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center flex-1 space-x-10">
             <NavLink to="/" className={getLinkClass}>Accueil</NavLink>
-            <NavLink to="/pieces" className={getLinkClass}>Nos Pièces</NavLink>
+            <NavLink to="/pieces" className={getLinkClass}>Catalogue</NavLink>
 
             <NavLink to="/installation" className={getLinkClass}>Installation</NavLink>
             <NavLink to="/reparation" className={getLinkClass}>Réparation</NavLink>
             <NavLink to="/maintenance" className={getLinkClass}>Maintenance</NavLink>
             <NavLink to="/contact" className={getLinkClass}>Contact</NavLink>
+          </div>
+
+          {/* Cart and Favorites Icons */}
+          <div className="hidden md:flex items-center space-x-4 ml-6">
+            <Link to="/favorites" className="relative p-2 text-white hover:text-yellow-400 transition-colors">
+              <Heart size={24} />
+              {favorites.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {favorites.length}
+                </span>
+              )}
+            </Link>
+            <Link to="/cart" className="relative p-2 text-white hover:text-yellow-400 transition-colors">
+              <ShoppingCart size={24} />
+              {getCartItemsCount() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {getCartItemsCount()}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
 
@@ -117,21 +141,33 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               {[
                 { to: "/", label: "Accueil" },
-                { to: "/pieces", label: "Nos Pièces" }, // ✅ جديد
+                { to: "/pieces", label: "Catalogue" },
 
                 { to: "/installation", label: "Installation" },
                 
                 { to: "/reparation", label: "Réparation" },
                 { to: "/maintenance", label: "Maintenance" },
                 { to: "/contact", label: "Contact" },
+                { to: "/favorites", label: "Favoris" },
+                { to: "/cart", label: "Panier" },
               ].map(link => (
                 <NavLink 
                   key={link.to}
                   to={link.to} 
-                  className={({isActive}) => `py-3 px-4 rounded-md text-lg transition-colors ${isActive ? 'text-[#D4AF37] bg-yellow-100/10 font-semibold' : 'text-white/80 hover:text-[#D4AF37] hover:bg-white/10'}`}
+                  className={({isActive}) => `py-3 px-4 rounded-md text-lg transition-colors flex items-center justify-between ${isActive ? 'text-[#D4AF37] bg-yellow-100/10 font-semibold' : 'text-white/80 hover:text-[#D4AF37] hover:bg-white/10'}`}
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  {link.to === '/favorites' && favorites.length > 0 && (
+                    <span className="bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {favorites.length}
+                    </span>
+                  )}
+                  {link.to === '/cart' && getCartItemsCount() > 0 && (
+                    <span className="bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {getCartItemsCount()}
+                    </span>
+                  )}
                 </NavLink>
               ))}
             </div>

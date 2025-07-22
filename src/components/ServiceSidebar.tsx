@@ -4,7 +4,7 @@ import { Phone } from 'lucide-react';
 
 const links = [
   { to: '/installation', label: 'Installation' },
-  { to: '/pieces', label: 'Pièces d\'ascenseurs' }, // ✅ المصححة
+  { to: '/pieces', label: 'Catalogue' },
   { to: '/reparation', label: 'Réparation' },
   { to: '/maintenance', label: 'Maintenance' },
 ];
