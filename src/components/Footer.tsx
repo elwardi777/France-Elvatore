@@ -160,11 +160,11 @@ Franceascenseurs.maroc@gmail.com                  </a>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/pieces" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center space-x-2 group">
+  <Link to="/pieces" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center space-x-2 group">
     <span className="w-2 h-2 bg-gold-400 rounded-full group-hover:scale-125 transition-transform"></span>
-                    <span>Catalogue</span>
-                  </Link>
-                </li>
+    <span>Pièces d'ascenseur</span>
+  </Link>
+</li>
 
                 <li>
                   <Link to="/installation" className="text-gray-300 hover:text-gold-300 transition-colors flex items-center space-x-2 group">
