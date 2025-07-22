@@ -10,7 +10,7 @@ import InstallationPage from "./pages/InstallationPage";
 import ReparationPage from "./pages/ReparationPage";
 import MaintenancePage from "./pages/MaintenancePage";
 import ContactPage from "./pages/ContactPage";
-import CataloguePage from "./pages/CataloguePage";
+import CataloguePage from "./pages/PiecesPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import CartPage from "./pages/CartPage";
 import FavoritesPage from "./pages/FavoritesPage";
